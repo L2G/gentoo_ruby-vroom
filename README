@@ -1,3 +1,6 @@
+About Ruby-Vroom
+================
+
 I am learning my way around the Gentoo distro and Gentoo development.  I've
 noticed that the Ruby offerings in Gentoo are seriously out of date at this
 writing.
@@ -9,3 +12,17 @@ You are welcome to use the contents of this overlay as you like. But beware:
 it is highly experimental and not intended to be stable! 
 
 --Larry "Lawrence Leonard" Gilbert (2012-04-11)
+
+How to Use With Layman
+======================
+
+If you want to use this overlay (you're kidding, right?) with the help of
+layman, here's what you can do:
+
+1. Add this URL to your layman config's overlays section:
+	https://raw.github.com/L2G/gentoo_ruby-vroom/master/repo.xml
+2. Run:
+	layman -S
+	layman -a ruby-vroom
+
+That's it.
