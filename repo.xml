@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<repositories version="1.0">
+  <repo quality="experimental" status="unofficial">
+    <name><![CDATA[ruby-vroom]]></name>
+    <description lang="en"><![CDATA[Larry Gilbert's workbench for updating Gentoo's Ruby ebuilds]]></description>
+    <owner type="person">
+      <email>larry@L2G.to</email>
+      <name><![CDATA[Larry Gilbert]]></name>
+    </owner>
+    <source type="git">git://github.com/L2G/gentoo_ruby-vroom.git</source>
+  </repo>
+</repositories>
