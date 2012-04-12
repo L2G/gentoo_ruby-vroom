@@ -32,8 +32,7 @@ RDEPEND="
 	libedit? ( dev-libs/libedit )
 	!libedit? ( readline? ( sys-libs/readline ) )
 	sys-libs/zlib
-	>=app-admin/eselect-ruby-20100603
-	!<dev-ruby/rdoc-2"
+	>=app-admin/eselect-ruby-20100603"
 DEPEND="${RDEPEND}"
 PDEPEND="xemacs? ( app-xemacs/ruby-modes )"
 
