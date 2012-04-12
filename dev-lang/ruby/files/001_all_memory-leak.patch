@@ -1,0 +1,59 @@
+Index: ruby-1.8.7-p299/ext/dl/handle.c
+===================================================================
+--- ruby-1.8.7-p299.orig/ext/dl/handle.c
++++ ruby-1.8.7-p299/ext/dl/handle.c
+@@ -10,9 +10,12 @@ VALUE rb_cDLHandle;
+ void
+ dlhandle_free(struct dl_handle *dlhandle)
+ {
++  if (!dlhandle)
++    return;
+   if (dlhandle->ptr && dlhandle->open && dlhandle->enable_close) {
+     dlclose(dlhandle->ptr);
+   }
++  dlfree(dlhandle);
+ }
+ 
+ VALUE
+Index: ruby-1.8.7-p299/ext/dl/ptr.c
+===================================================================
+--- ruby-1.8.7-p299.orig/ext/dl/ptr.c
++++ ruby-1.8.7-p299/ext/dl/ptr.c
+@@ -45,6 +45,8 @@ rb_dlmem_aref(void *ptr)
+ void
+ dlptr_free(struct ptr_data *data)
+ {
++  if (!data)
++    return;
+   if (data->ptr) {
+     DEBUG_CODE({
+       printf("dlptr_free(): removing the pointer `0x%x' from the MemorySpace\n",
+@@ -61,6 +63,7 @@ dlptr_free(struct ptr_data *data)
+   if (data->stype) dlfree(data->stype);
+   if (data->ssize) dlfree(data->ssize);
+   if (data->ids) dlfree(data->ids);
++  dlfree(data);
+ }
+ 
+ void
+Index: ruby-1.8.7-p299/ext/dl/sym.c
+===================================================================
+--- ruby-1.8.7-p299.orig/ext/dl/sym.c
++++ ruby-1.8.7-p299/ext/dl/sym.c
+@@ -57,6 +57,8 @@ char2type(int ch)
+ void
+ dlsym_free(struct sym_data *data)
+ {
++  if(!data)
++    return;
+   if( data->name ){
+     DEBUG_CODE({
+       printf("dlsym_free(): free(data->name:%s)\n",data->name);
+@@ -69,6 +71,7 @@ dlsym_free(struct sym_data *data)
+     });
+     free(data->type);
+   }
++  dlfree(data);
+ }
+ 
+ VALUE
