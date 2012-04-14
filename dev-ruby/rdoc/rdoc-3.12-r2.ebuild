@@ -23,11 +23,12 @@ KEYWORDS="~alpha ~amd64 ~amd64-linux ~arm ~hppa ~ia64 ~mips ~ppc ~ppc-macos ~ppc
 IUSE=""
 
 ruby_add_bdepend "
-	dev-ruby/racc
-	doc? ( >=dev-ruby/hoe-2.7.0 )
+	=dev-ruby/racc-1* >=dev-ruby/racc-1.4
+	=dev-ruby/hoe-2* >=dev-ruby/hoe-2.12
 	test? (
-		>=dev-ruby/hoe-2.7.0
-		dev-ruby/minitest
+		>=dev-ruby/rubygems-1.8
+		=dev-ruby/minitest-2* >=dev-ruby/minitest-2.6
+		>=dev-ruby/zentest-4
 	)"
 
 ruby_add_rdepend "=dev-ruby/json-1* >=dev-ruby/json-1.4"
