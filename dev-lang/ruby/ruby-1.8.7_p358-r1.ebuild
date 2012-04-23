@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/dev-lang/ruby/ruby-1.8.7_p357.ebuild,v 1.6 2012/01/08 15:36:01 armin76 Exp $
 
-EAPI=4
+EAPI=2
 
 inherit autotools eutils flag-o-matic multilib versionator
 
@@ -32,7 +32,8 @@ RDEPEND="
 	libedit? ( dev-libs/libedit )
 	!libedit? ( readline? ( sys-libs/readline ) )
 	sys-libs/zlib
-	>=app-admin/eselect-ruby-20100603"
+	>=app-admin/eselect-ruby-20100603
+	!<dev-ruby/rdoc-2"
 DEPEND="${RDEPEND}"
 PDEPEND="xemacs? ( app-xemacs/ruby-modes )"
 
