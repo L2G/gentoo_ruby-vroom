@@ -19,7 +19,7 @@ HOMEPAGE="https://github.com/rdoc/rdoc/"
 
 LICENSE="Ruby MIT"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~amd64-linux ~arm ~hppa ~ia64 ~mips ~ppc ~ppc-macos ~ppc64 ~s390 ~sh ~sparc ~sparc-solaris ~sparc64-solaris ~x64-macos ~x64-solaris ~x86 ~x86-fbsd ~x86-linux ~x86-macos ~x86-solaris"
+KEYWORDS="~alpha ~amd64 ~amd64-linux -arm ~hppa ~ia64 ~mips ~ppc ~ppc-macos ~ppc64 ~s390 ~sh ~sparc ~sparc-solaris ~sparc64-solaris ~x64-macos ~x64-solaris ~x86 ~x86-fbsd ~x86-linux ~x86-macos ~x86-solaris"
 IUSE=""
 
 ruby_add_bdepend "
