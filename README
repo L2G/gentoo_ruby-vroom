@@ -1,17 +1,14 @@
 About Ruby-Vroom
 ================
 
-I am learning my way around the Gentoo distro and Gentoo development.  I've
-noticed that the Ruby offerings in Gentoo are seriously out of date at this
-writing.
-
+I am learning my way around the Gentoo distro and Gentoo development.
 I've created the ruby-vroom overlay to expose my experiments in updating
 Gentoo's Ruby software.
 
 You are welcome to use the contents of this overlay as you like. But beware:
 it is highly experimental and not intended to be stable! 
 
---Larry "Lawrence Leonard" Gilbert (2012-04-11)
+--Larry "Lawrence Leonard" Gilbert (2012-05-12)
 
 How to Use With Layman
 ======================
