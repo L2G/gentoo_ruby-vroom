@@ -16,7 +16,7 @@ DESCRIPTION="A Behaviour Driven Development (BDD) framework for Ruby"
 HOMEPAGE="http://rspec.rubyforge.org/"
 
 LICENSE="MIT"
-SLOT="2"
+SLOT="2.7"
 KEYWORDS="~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd ~amd64-linux ~x86-linux ~ppc-macos ~x64-macos ~x86-macos ~sparc-solaris ~sparc64-solaris ~x64-solaris ~x86-solaris"
 IUSE=""
 

@@ -19,7 +19,7 @@ DESCRIPTION="RSpec's official Ruby on Rails plugin"
 HOMEPAGE="http://rspec.info/"
 
 LICENSE="MIT"
-SLOT="2"
+SLOT="2.7"
 KEYWORDS="~amd64"
 IUSE=""
 
