@@ -1,6 +1,6 @@
 # Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-ruby/ruby-gettext/ruby-gettext-2.1.0_p20100728-r2.ebuild,v 1.2 2012/05/01 18:24:10 armin76 Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-ruby/ruby-gettext/ruby-gettext-2.1.0_p20100728-r3.ebuild,v 1.2 2012/05/01 18:24:10 armin76 Exp $
 
 EAPI=2
 
@@ -20,8 +20,7 @@ RUBY_FAKEGEM_EXTRAINSTALL="data"
 inherit ruby-fakegem
 
 DESCRIPTION="Ruby GetText Package is Native Language Support Library and Tools modeled after GNU gettext package"
-HOMEPAGE="http://www.yotabanana.com/hiki/ruby-gettext.html"
-SRC_URI="http://dev.a3li.li/gentoo/distfiles/${P}.tar.bz2"
+HOMEPAGE="http://ruby-gettext.github.com/"
 
 KEYWORDS="~amd64 ~ppc ~x86 ~x86-fbsd ~x86-macos"
 IUSE=""
@@ -35,7 +34,10 @@ RDEPEND="${RDEPEND}
 DEPEND="${DEPEND}
 	sys-devel/gettext"
 
-ruby_add_bdepend "test? ( || ( virtual/ruby-test-unit dev-ruby/test-unit:2 ) )"
+ruby_add_bdepend "
+	dev-ruby/yard
+	test? ( || ( virtual/ruby-test-unit dev-ruby/test-unit:2 ) )
+	"
 
 all_ruby_prepare() {
 	# Allison 2.0.3 produces illegal HTML which markaby doesn't like.
