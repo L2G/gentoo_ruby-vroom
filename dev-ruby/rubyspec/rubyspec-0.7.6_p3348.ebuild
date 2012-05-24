@@ -15,8 +15,13 @@ EGIT_REPO_URI="https://github.com/rubyspec/rubyspec.git"
 MY_GIT_COMMIT="0233f4f"
 inherit eutils git-2 versionator
 
-if [[ "$(get_major_version)" != "9999" && "${MY_GIT_COMMIT}" != "" ]]; then
-	GIT_BRANCH="v${PV/_p/-}-g${MY_GIT_COMMIT}"
+if [[ "$(get_major_version)" != "9999" ]]; then
+	if [[ "${MY_GIT_COMMIT}" == "" ]]; then
+		EGIT_COMMIT="v${PV}"
+	else
+		DEPEND="${DEPEND} >=dev-vcs/git-1.7.6"
+		EGIT_COMMIT="v${PV/_p/-}-g${MY_GIT_COMMIT}"
+	fi
 fi
 
 RESTRICT="primaryuri"
@@ -29,11 +34,11 @@ RDEPEND="${RDEPEND} dev-ruby/mspec"
 
 src_unpack() {
 	git-2_src_unpack
-	if [[ "${GIT_BRANCH}" != "" ]]; then
+	if [[ "${MY_GIT_COMMIT}" != "" ]]; then
 		pushd ${S}
 		GIT_DESCRIBE=$(git describe)
-		[[ ${GIT_BRANCH} == ${GIT_DESCRIBE} ]] || die \
-			"Tried to check out ${GIT_BRANCH} but got ${GIT_DESCRIBE}"
+		[[ ${EGIT_COMMIT} == ${GIT_DESCRIBE} ]] || die \
+			"Tried to check out ${EGIT_COMMIT} but got ${GIT_DESCRIBE}"
 		popd
 	fi
 }
