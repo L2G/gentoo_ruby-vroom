@@ -1,0 +1,22 @@
+dev-vcs/git
+dev-ruby/mspec
+0
+
+primaryuri
+
+MIT BSD
+RSpec-syntax compatible framework for RubySpecs
+
+eutils git-2 multilib toolchain-funcs user versionator
+
+
+
+
+4
+
+unpack
+
+
+
+
+
