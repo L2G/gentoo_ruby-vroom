@@ -1,0 +1,7 @@
+# ChangeLog for dev-ruby/pelusa
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  05 Jun 2012; <larry@gentoo.org> +pelusa-0.2.1.ebuild:
+  Created new ebuild
+
