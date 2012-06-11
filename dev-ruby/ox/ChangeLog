@@ -1,0 +1,8 @@
+# ChangeLog for dev-ruby/ox
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+*ox-1.5.7 (10 Jun 2012)
+
+  10 Jun 2012; Larry Gilbert <larry@L2G.to> changed_file1, changed_file2 :
+  Initial import.
