@@ -7,7 +7,7 @@ primaryuri
 MIT BSD
 Executable specification for the Ruby programming language
 
-eutils git-2 multilib toolchain-funcs user versionator
+eutils git-2 multilib prefix toolchain-funcs user versionator
 
 
 
