@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+<!-- <herd>some-herd</herd> -->
+<maintainer>
+	<email>larry@L2G.to</email>
+</maintainer>
+<longdescription>A fast XML parser and object serializer that uses only standard
+C lib. Optimized XML (Ox), as the name implies, was written to provide
+speed-optimized XML handling. It was designed to be an alternative to Nokogiri
+and other Ruby XML parsers for generic XML parsing and as an alternative to
+Marshal for Object serialization.</longdescription>
+<use/>
+</pkgmetadata>
