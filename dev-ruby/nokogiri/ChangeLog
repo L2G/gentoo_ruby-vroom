@@ -1,12 +1,58 @@
 # ChangeLog for dev-ruby/nokogiri
-# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
-# $Header: /var/cvsroot/gentoo-x86/dev-ruby/nokogiri/ChangeLog,v 1.71 2012/05/11 18:47:41 flameeyes Exp $
+# Copyright 1999-2013 Gentoo Foundation; Distributed under the GPL v2
+# $Header: /var/cvsroot/gentoo-x86/dev-ruby/nokogiri/ChangeLog,v 1.86 2013/01/16 01:10:42 zerochaos Exp $
 
-*nokogiri-1.5.3_rc4 (21 May 2012)
+  16 Jan 2013; Rick Farina <zerochaos@gentoo.org> metadata.xml,
+  nokogiri-1.5.5.ebuild:
+  adding ~arm keywords to net-analyzer/metasploit rdeps, removed unused use flag
+  description
 
-  21 May 2012; <larry@L2G.to> +nokogiri-1.5.3_rc4.ebuild:
-  Added Nokogiri 1.5.3 release candidate; took out ebuild test restrictions
-  (ironically, ruby18 tests pass and ruby19 tests fail now)
+  20 Dec 2012; Hans de Graaff <graaff@gentoo.org> -nokogiri-1.4.4-r1.ebuild,
+  -nokogiri-1.5.2.ebuild:
+  Cleanup.
+
+  01 Dec 2012; Raúl Porcel <armin76@gentoo.org> nokogiri-1.5.5.ebuild:
+  alpha/ia64/sparc/x86 stable wrt #440094
+
+  09 Nov 2012; Anthony G. Basile <blueness@gentoo.org> nokogiri-1.5.5.ebuild:
+  stable ppc ppc64, bug #440094
+
+  07 Nov 2012; Jeroen Roovers <jer@gentoo.org> nokogiri-1.5.5.ebuild:
+  Stable for HPPA (bug #440094).
+
+  06 Nov 2012; Jeroen Roovers <jer@gentoo.org> nokogiri-1.5.2.ebuild:
+  Stable for HPPA (bug #426668).
+
+  31 Oct 2012; Agostino Sarubbo <ago@gentoo.org> nokogiri-1.5.5.ebuild:
+  Stable for amd64, wrt bug #440094
+
+  28 Oct 2012; Raúl Porcel <armin76@gentoo.org> nokogiri-1.4.4-r1.ebuild,
+  nokogiri-1.5.2.ebuild, nokogiri-1.5.5.ebuild:
+  alpha stable, add ~alpha
+
+  28 Oct 2012; Raúl Porcel <armin76@gentoo.org> nokogiri-1.5.2.ebuild:
+  ia64/sparc stable wrt #423071
+
+  26 Jul 2012; Anthony G. Basile <blueness@gentoo.org> nokogiri-1.5.2.ebuild:
+  Stable ppc64, bug #423071
+
+  22 Jul 2012; <nixnut@gentoo.org> nokogiri-1.5.2.ebuild:
+  ppc stable #423071
+
+  04 Jul 2012; Andreas Schuerch <nativemad@gentoo.org> nokogiri-1.5.2.ebuild:
+  x86 stable, see bug 423071
+
+*nokogiri-1.5.5 (03 Jul 2012)
+
+  03 Jul 2012; Hans de Graaff <graaff@gentoo.org> +nokogiri-1.5.5.ebuild:
+  Version bump. Enable most of the tests again.
+
+  23 Jun 2012; Agostino Sarubbo <ago@gentoo.org> nokogiri-1.5.2.ebuild:
+  Stable for amd64, wrt bug #423071
+
+  22 Jun 2012; Hans de Graaff <graaff@gentoo.org> -nokogiri-1.5.0.ebuild,
+  -nokogiri-1.5.0-r1.ebuild, -nokogiri-1.5.0-r2.ebuild, nokogiri-1.5.2.ebuild:
+  Remove old versions.
 
 *nokogiri-1.5.2 (11 May 2012)
 
@@ -306,4 +352,3 @@
   +nokogiri-1.0.6.ebuild:
   Initial import from my personal overlay. This is now a dependency of
   dev-ruby/mechanize.
-

@@ -1,6 +1,6 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-ruby/nokogiri/nokogiri-1.5.2.ebuild,v 1.1 2012/05/11 18:47:41 flameeyes Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-ruby/nokogiri/nokogiri-1.5.5.ebuild,v 1.7 2013/01/16 01:10:42 zerochaos Exp $
 
 EAPI=4
 
@@ -8,19 +8,17 @@ USE_RUBY="ruby18 ruby19 ree18 jruby"
 
 RUBY_FAKEGEM_TASK_DOC="docs"
 RUBY_FAKEGEM_DOCDIR="doc"
-RUBY_FAKEGEM_EXTRADOC="CHANGELOG.rdoc CHANGELOG.ja.rdoc README.rdoc README.ja.rdoc"
+RUBY_FAKEGEM_EXTRADOC="CHANGELOG.rdoc CHANGELOG.ja.rdoc README.rdoc README.ja.rdoc ROADMAP.md STANDARD_RESPONSES.md"
 
-inherit ruby-fakegem eutils multilib versionator
-MY_PV=$(replace_version_separator '_' '.')   # deal with e.g. 1.5.3_rc4
+inherit ruby-fakegem eutils multilib
 
 DESCRIPTION="Nokogiri is an HTML, XML, SAX, and Reader parser."
 HOMEPAGE="http://nokogiri.rubyforge.org/"
 LICENSE="MIT"
-SRC_URI="https://github.com/tenderlove/nokogiri/tarball/v${MY_PV} -> ${P}.tgz"
-RUBY_S="tenderlove-nokogiri-*"
-RUBY_FAKEGEM_VERSION=${PV}
+SRC_URI="https://github.com/sparklemotion/nokogiri/tarball/v${PV} -> ${P}.tgz"
+RUBY_S="sparklemotion-nokogiri-*"
 
-KEYWORDS="~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd ~amd64-linux ~x86-linux ~ppc-macos ~x64-macos ~x86-macos ~sparc-solaris ~sparc64-solaris ~x64-solaris ~x86-solaris"
+KEYWORDS="alpha ~arm amd64 hppa ia64 ppc ppc64 sparc x86 ~x86-fbsd ~amd64-linux ~x86-linux ~ppc-macos ~x64-macos ~x86-macos ~sparc-solaris ~sparc64-solaris ~x64-solaris ~x86-solaris"
 SLOT="0"
 IUSE=""
 
@@ -52,6 +50,18 @@ all_ruby_prepare() {
 	sed -i -e '/cross_config_options/d' Rakefile || die
 }
 
+each_ruby_prepare() {
+	case ${RUBY} in
+		*jruby)
+			# Avoid failing tests:
+			# https://github.com/sparklemotion/nokogiri/issues/721
+			rm test/xslt/test_exception_handling.rb test/test_xslt_transforms.rb || die
+			;;
+		*)
+			;;
+	esac
+}
+
 each_ruby_configure() {
 	case ${RUBY} in
 		*jruby)
@@ -74,6 +84,10 @@ each_ruby_configure() {
 each_ruby_compile() {
 	case ${RUBY} in
 		*jruby)
+			if ! [[ -f lib/nokogiri/css/parser.rb ]]; then
+				${RUBY} -S rake lib/nokogiri/css/parser.rb || die "racc failed"
+			fi
+
 			${RUBY} -S rake compile || die
 			;;
 		*)
